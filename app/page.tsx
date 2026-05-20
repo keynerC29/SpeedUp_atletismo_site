@@ -5,6 +5,7 @@ import Feature  from "./components/Feature";
 import Screens from "./components/Screens";
 import Footer from "./components/Footer";
 import Updates from "./components/Updates";
+import Video from "./components/Video";
 
  
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Statistics />
       <Feature />
       <Screens />
+      <Video />
       <Updates />
       <Footer />
 
