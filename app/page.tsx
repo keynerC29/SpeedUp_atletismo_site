@@ -13,7 +13,6 @@ export default function Home() {
     <main className="bg-[#111010] text-[#F7F6F2] min-h-screen">
       <Navbar />
       <Hero />
-      <Statistics />
       <Feature />
       <Screens />
       <Video />
