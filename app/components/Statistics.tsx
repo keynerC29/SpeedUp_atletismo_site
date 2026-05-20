@@ -1,7 +1,7 @@
 const stats = [
   { num: "+200", desc: "Métricas disponibles" },
   { num: "98%", desc: "Precisión de análisis" },
-  { num: "12+", desc: "Disciplinas de atletismo" },
+  { num: "12+", desc: "Disciplinas de atletismo asfa s" },
   { num: "100%", desc: "Gratuita" },
 ];
 

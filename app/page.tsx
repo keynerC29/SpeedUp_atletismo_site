@@ -1,6 +1,5 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Statistics from "./components/Statistics";
 import Feature  from "./components/Feature";
 import Screens from "./components/Screens";
 import Footer from "./components/Footer";
