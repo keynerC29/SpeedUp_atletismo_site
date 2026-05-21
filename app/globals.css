@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #111010;
+  --foreground: #F7F6F2;
 }
 
 @theme inline {
@@ -12,17 +12,26 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  min-height: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
+  background: var(--background);
 }
 
 body {
-  background: var(--background);
+  margin: 0;
+  padding: 0;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111010;
+    --foreground: #F7F6F2;
+  }
 }
 
 @keyframes floaty {

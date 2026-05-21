@@ -41,14 +41,14 @@ export default function AppLogs() {
     ];
 
     return (
-        <section id="actualizaciones" className="max-w-[1200px] mx-auto px-12 py-20 text-white">
+        <section id="actualizaciones" className="max-w-[1200px] mx-auto px-4 sm:px-12 py-20 text-white">
 
             {/* ENCABEZADO */}
             <p className="text-[12px] font-bold tracking-[3px] uppercase text-[#FF8542] mb-3">
                 Historial de Desarrollo
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mb-16">
-                <h2 className="font-black text-[48px] leading-[1.05] font-condensed">
+                <h2 className="font-black text-[40px] sm:text-[48px] leading-[1.05] font-condensed break-words max-w-full">
                     Estado del proyecto y <br />
                     <span className="text-[#FF8542]">actualizaciones</span>
                 </h2>

@@ -35,12 +35,12 @@ const features = [
 
 export default function Features() {
     return (
-        <section id="características" className="max-w-[1200px] mx-auto px-12 py-20">
+        <section id="características" className="max-w-[1200px] mx-auto px-4 sm:px-12 py-20">
             <p className="text-[12px] font-bold tracking-[3px] uppercase text-[#FF8542] mb-3">
                 Características
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mb-12">
-                <h2 className="font-black text-[48px] leading-[1.05] font-condensed">
+                <h2 className="font-black text-[40px] sm:text-[48px] leading-[1.05] font-condensed break-words max-w-full">
                     Lo que necesitas para{" "}
                     <span className="text-[#FF8542]">analizar tu rendimiento en atletismo</span>
                 </h2>

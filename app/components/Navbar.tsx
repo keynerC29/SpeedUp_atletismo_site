@@ -24,7 +24,7 @@ export default function Navbar() {
                         />
 
                         {/* Nombre o imagen del texto */}
-                        
+
                         {/* OPCIÓN 1: Texto normal */}
 
                         {/* OPCIÓN 2: Imagen del nombre/logo */}
@@ -40,7 +40,7 @@ export default function Navbar() {
 
                 {/* Links */}
                 <ul className="hidden md:flex gap-8 list-none">
-                    {["Características", "Capturas", "Descargar", "Contacto"].map((item) => (
+                    {["Características", "Capturas", "Descargar"].map((item) => (
                         <li key={item}>
                             <Link
                                 href={`#${item.toLowerCase()}`}

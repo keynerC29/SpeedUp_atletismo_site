@@ -41,7 +41,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="max-w-[1200px] mx-auto px-12 py-20 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <section className="relative max-w-[1200px] mx-auto px-12 py-20 grid grid-cols-1 md:grid-cols-2 gap-16 items-center overflow-hidden">
 
             {/* Content */}
             <div>

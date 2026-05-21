@@ -92,7 +92,7 @@ export default function Screenshots() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-[#151517] rounded-2xl p-4 sm:p-12 border border-white/5 shadow-2xl">
 
         {/* COLUMNA IZQUIERDA: Selectores adaptados para móvil (Scroll horizontal) y escritorio (Lista vertical) */}
-        <div className="lg:col-span-5 flex flex-row lg:flex-col gap-3 overflow-x-auto lg:overflow-x-visible pb-3 lg:pb-0 scrollbar-none snap-x snap-mandatory w-full">
+        <div className="lg:col-span-5 flex flex-row lg:flex-col gap-3 overflow-x-auto lg:overflow-x-visible pb-3 lg:pb-0 scrollbar-none snap-x snap-mandatory w-full items-start">
           {features.map((item) => (
             <button
               key={item.id}
@@ -108,10 +108,18 @@ export default function Screenshots() {
               }`}>
                 {item.badge}
               </span>
-              <h3 className="text-[18px] sm:text-[20px] font-black font-condensed text-white mb-1 sm:mb-2 line-clamp-1 lg:line-clamp-none">
+              
+              {/* CAMBIO AQUÍ: El título expande sus líneas si está activo */}
+              <h3 className={`text-[18px] sm:text-[20px] font-black font-condensed text-white mb-1 sm:mb-2 transition-all duration-300 ${
+                activeTab === item.id ? "line-clamp-none" : "line-clamp-1 lg:line-clamp-none"
+              }`}>
                 {item.title}
               </h3>
-              <p className="text-xs sm:text-sm text-[#9A9A9E] leading-relaxed line-clamp-2 lg:line-clamp-none">
+              
+              {/* CAMBIO AQUÍ: La descripción se expande completamente si está activa */}
+              <p className={`text-xs sm:text-sm text-[#9A9A9E] leading-relaxed transition-all duration-300 ${
+                activeTab === item.id ? "line-clamp-none" : "line-clamp-2 lg:line-clamp-none"
+              }`}>
                 {item.description}
               </p>
             </button>
