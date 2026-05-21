@@ -44,7 +44,7 @@ export default function Screenshots() {
       id: 2,
       badge: "Perfil y progreso",
       title: "Perfil del atleta y configuraciones",
-      description: "En tu perfil puedes configurar tus datos de atleta, tu nombre, categoria (se calcula segun la edad de nacimiento), entre otras cosas. Ademas, puedes visualizar el progreso de tus marcas mas abajo, mostrando una estadistica completa de tus marcas regsitradas a lo largo de tu progreso en el atletismo.",
+      description: "En tu perfil puedes configure tus datos de atleta, tu nombre, categoria (se calcula segun la edad de nacimiento), entre otras cosas. Ademas, puedes visualizar el progreso de tus marcas mas abajo, mostrando una estadistica completa de tus marcas regsitradas a lo largo de tu progreso en el atletismo.",
       images: [
         "/assets/images/profile1_image.jpeg",
         "/assets/screens/profilePruebas_image.jpeg",
@@ -54,7 +54,6 @@ export default function Screenshots() {
     }
   ];
 
-  // Sincroniza y reinicia al primer slide si el usuario cambia de pestaña lateral
   useEffect(() => {
     setCurrentImgIndex(0);
   }, [activeTab]);
@@ -73,64 +72,67 @@ export default function Screenshots() {
   };
 
   return (
-    <section id="capturas" className="max-w-[1200px] mx-auto px-12 py-20 text-white">
+    <section id="capturas" className="max-w-[1200px] mx-auto px-4 sm:px-12 py-12 sm:py-20 text-white">
 
       {/* ENCABEZADO */}
       <p className="text-[12px] font-bold tracking-[3px] uppercase text-[#FF8542] mb-3">
         Capturas de pantalla
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mb-12">
-        <h2 className="font-black text-[48px] leading-[1.05] font-condensed">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mb-8 sm:mb-12">
+        <h2 className="font-black text-[36px] sm:text-[48px] leading-[1.05] font-condensed">
           La aplicación <br />
           <span className="text-[#FF8542]">en acción</span>
         </h2>
-        <p className="text-[#9A9A9E] text-[16px] leading-relaxed self-end">
+        <p className="text-[#9A9A9E] text-[14px] sm:text-[16px] leading-relaxed self-end">
           Explora la interfaz de SpeedUp. Diseñada de forma minimalista y estructurada para que registrar tus marcas de pista y campo sea cuestión de segundos.
         </p>
       </div>
 
       {/* CONTENEDOR PRINCIPAL */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-[#151517] rounded-2xl p-8 sm:p-12 border border-white/5 shadow-2xl">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-[#151517] rounded-2xl p-4 sm:p-12 border border-white/5 shadow-2xl">
 
-        {/* COLUMNA IZQUIERDA: Botones selectores */}
-        <div className="lg:col-span-5 flex flex-col gap-4">
+        {/* COLUMNA IZQUIERDA: Selectores adaptados para móvil (Scroll horizontal) y escritorio (Lista vertical) */}
+        <div className="lg:col-span-5 flex flex-row lg:flex-col gap-3 overflow-x-auto lg:overflow-x-visible pb-3 lg:pb-0 scrollbar-none snap-x snap-mandatory w-full">
           {features.map((item) => (
             <button
               key={item.id}
               onClick={() => setActiveTab(item.id)}
-              className={`text-left p-6 rounded-2xl transition-all duration-300 border ${activeTab === item.id
-                ? "bg-[#1C1C1E] border-[#FF8542]/40 shadow-xl translate-x-1"
-                : "bg-transparent border-transparent hover:bg-[#1C1C1E]/50"
-                }`}
+              className={`text-left p-4 sm:p-6 rounded-2xl transition-all duration-300 border flex-shrink-0 lg:flex-shrink w-[85%] sm:w-[60%] lg:w-full snap-center ${
+                activeTab === item.id
+                  ? "bg-[#1C1C1E] border-[#FF8542]/40 shadow-xl lg:translate-x-1"
+                  : "bg-transparent border-transparent hover:bg-[#1C1C1E]/50"
+              }`}
             >
-              <span className={`text-[11px] font-bold tracking-wider uppercase block mb-1 ${activeTab === item.id ? "text-[#FF8542]" : "text-[#9A9A9E]/60"
-                }`}>
+              <span className={`text-[10px] sm:text-[11px] font-bold tracking-wider uppercase block mb-1 ${
+                activeTab === item.id ? "text-[#FF8542]" : "text-[#9A9A9E]/60"
+              }`}>
                 {item.badge}
               </span>
-              <h3 className="text-[20px] font-black font-condensed text-white mb-2">
+              <h3 className="text-[18px] sm:text-[20px] font-black font-condensed text-white mb-1 sm:mb-2 line-clamp-1 lg:line-clamp-none">
                 {item.title}
               </h3>
-              <p className="text-sm text-[#9A9A9E] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#9A9A9E] leading-relaxed line-clamp-2 lg:line-clamp-none">
                 {item.description}
               </p>
             </button>
           ))}
         </div>
 
-        {/* COLUMNA DERECHA: El Teléfono con la animación del Hero */}
-        <div className="lg:col-span-7 flex justify-center items-center bg-[#1C1C1E] rounded-2xl py-12 px-4 border border-white/5 min-h-[500px]">
-          <div className="relative mx-auto border-[#0d0d0e] bg-[#0d0d0e] border-[14px] rounded-[2.5rem] h-[490px] w-[270px] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] overflow-hidden group">
+        {/* COLUMNA DERECHA: Área del Teléfono */}
+        <div className="lg:col-span-7 flex justify-center items-center bg-[#1C1C1E] rounded-2xl py-8 sm:py-12 px-2 sm:px-4 border border-white/5 min-h-0 lg:min-h-[500px] w-full">
+          
+          {/* El Teléfono ahora usa un ancho base cómodo en móvil (xs) y crece en escritorio */}
+          <div className="relative mx-auto border-[#0d0d0e] bg-[#0d0d0e] border-[10px] sm:border-[14px] rounded-[2.2rem] sm:rounded-[2.5rem] h-[440px] sm:h-[490px] w-[240px] sm:w-[270px] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] overflow-hidden group flex-shrink-0">
 
             {/* Cámara frontal */}
-            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-black border border-white/10 z-20 shadow-inner">
-              <div className="w-[6px] h-[6px] bg-[#1f1f1f] rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute top-2.5 sm:top-3 left-1/2 -translate-x-1/2 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-black border border-white/10 z-20 shadow-inner">
+              <div className="w-[5px] h-[5px] sm:w-[6px] sm:h-[6px] bg-[#1f1f1f] rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
             </div>
 
             {/* Pantalla Interna */}
-            <div className="rounded-[1.7rem] overflow-hidden w-full h-full bg-[#151517] relative border border-white/5">
+            <div className="rounded-[1.5rem] sm:rounded-[1.7rem] overflow-hidden w-full h-full bg-[#151517] relative border border-white/5">
 
-              {/* ⚡ CONTENEDOR FLEX REPLICADO DEL HERO */}
-              {/* Aquí usamos tu lógica: se desplaza horizontalmente según el index multiplicando el componente por -100% */}
+              {/* CONTENEDOR FLEX REPLICADO DEL HERO */}
               <div
                 className="flex h-full w-full transition-transform duration-700 ease-in-out"
                 style={{ transform: `translateX(-${currentImgIndex * 100}%)` }}
@@ -140,29 +142,29 @@ export default function Screenshots() {
                     <img
                       src={img}
                       alt={`slide-${i}`}
-                      className="w-full h-full object-center"
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                 ))}
               </div>
 
-              {/* CONTROLES DEL CARRUSEL (Solo si el módulo tiene varias imágenes) */}
+              {/* CONTROLES DEL CARRUSEL (Visibles táctilmente o mediante hover) */}
               {hasMultipleImages && (
                 <>
                   {/* Botón Izquierdo */}
                   <button
                     onClick={prevImage}
-                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-[#FF8542] text-white p-2 rounded-full border border-white/10 transition duration-200 z-10 opacity-0 group-hover:opacity-100 backdrop-blur-sm"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-[#FF8542] text-white p-2 rounded-full border border-white/10 transition duration-200 z-10 lg:opacity-0 lg:group-hover:opacity-100 backdrop-blur-sm"
                   >
-                    <FaChevronLeft size={12} />
+                    <FaChevronLeft size={10} />
                   </button>
 
                   {/* Botón Derecho */}
                   <button
                     onClick={nextImage}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-[#FF8542] text-white p-2 rounded-full border border-white/10 transition duration-200 z-10 opacity-0 group-hover:opacity-100 backdrop-blur-sm"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-[#FF8542] text-white p-2 rounded-full border border-white/10 transition duration-200 z-10 lg:opacity-0 lg:group-hover:opacity-100 backdrop-blur-sm"
                   >
-                    <FaChevronRight size={12} />
+                    <FaChevronRight size={10} />
                   </button>
 
                   {/* Puntos Indicadores */}
@@ -174,8 +176,9 @@ export default function Screenshots() {
                           e.stopPropagation();
                           setCurrentImgIndex(index);
                         }}
-                        className={`h-1.5 rounded-full transition-all duration-300 ${currentImgIndex === index ? "w-4 bg-[#FF8542]" : "w-1.5 bg-white/40"
-                          }`}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          currentImgIndex === index ? "w-4 bg-[#FF8542]" : "w-1.5 bg-white/40"
+                        }`}
                       />
                     ))}
                   </div>
